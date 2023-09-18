@@ -1,6 +1,7 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um gestor de estoque com todas as funções CRUD
+Projeto feito com vite, react, react-router, e react-boostrap
 
 Currently, two official plugins are available:
 
