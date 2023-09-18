@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark-primary: #020202ca;
+  --bg-dark-secondary: #020202ab;
+  --font-color: #f6f2f2;
+}
+body {
+  min-height: 100vh;
+  background-color: var(--bg-dark-primary) !important;
+  color: var(--font-color) !important;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+  margin: 0 1rem;
+}
+.active {
+  border-bottom: 1px solid var(--font-color);
+}
