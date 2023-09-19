@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import LinkBtn from "./LinkButton";
-import { getRecentItens, LowStockItens } from "../assets/itensFuctions";
+import { getRecentItens, lowStockItens } from "../assets/itensFuctions";
 import { useContext } from "react";
 import { stockContext } from "../contexts/StockContext";
 
@@ -23,7 +23,7 @@ const LowStockContainer = ({ items }) => {
         <Col sm={3}>Qtd</Col>
         <Col sm={3}>Ações</Col>
       </Row>
-      {LowStockItens(items).map((item) => {
+      {lowStockItens(items).map((item) => {
         return (
           <Row
             key={item.id}
