@@ -5,7 +5,7 @@ function getTotalCategories(products) {
   return categories.length;
 }
 
-function LowStockItens(products) {
+function lowStockItens(products) {
   const lowStock = products.filter((product) => product.quantity < 10);
   return lowStock;
 }
@@ -40,7 +40,7 @@ function getTotalQuantityInStock(products) {
 
 export {
   getTotalCategories,
-  LowStockItens,
+  lowStockItens,
   getTotalQuantityInStock,
   getRecentItens,
 };
