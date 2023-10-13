@@ -43,7 +43,7 @@ export default function Item() {
           margin: 0,
         }}
       >
-        <CardDark>{`Categoria: ${product.categories}`}</CardDark>
+        <CardDark>{`Categoria: ${product.category}`}</CardDark>
         <CardDark
           className={"mx-4"}
         >{`Quantidade em estoque: ${product.quantity}`}</CardDark>
