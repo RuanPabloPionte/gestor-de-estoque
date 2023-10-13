@@ -14,7 +14,7 @@ function lowStockItens(products) {
 function getRecentItens(products) {
   const today = new Date();
   const tenDaysAgo = new Date(today);
-  tenDaysAgo.setDate(tenDaysAgo.getDate() - 30);
+  tenDaysAgo.setDate(tenDaysAgo.getDate() - 10);
 
   const recentItens = products.filter((product) => {
     const creationgdate = new Date(product.creationDate);
@@ -30,13 +30,6 @@ function getTotalQuantityInStock(products) {
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   return quantity;
 }
-
-// console.log("Total Categories:", getTotalCategories());
-// console.log("Low Stock Items:", getLowStockCount());
-// console.log("Total Quantity in Stock:", getTotalQuantityInStock());
-
-// const date = new Date();
-// console.log(date.toLocaleString());
 
 export {
   getTotalCategories,

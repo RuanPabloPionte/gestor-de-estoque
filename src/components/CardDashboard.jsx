@@ -14,19 +14,19 @@ const CardSection = () => {
   return (
     <Row>
       <CardDashboardInfo
-        titlle={"Diversidade de items"}
+        title={"Diversidade de items"}
         number={getTotalCategories(items)}
       />
       <CardDashboardInfo
-        titlle={"Iventário total"}
+        title={"Iventário total"}
         number={getTotalQuantityInStock(items)}
       />
       <CardDashboardInfo
-        titlle={"Itens recentes"}
+        title={"Itens recentes"}
         number={getRecentItens(items).length}
       />
       <CardDashboardInfo
-        titlle={"Itens acabando"}
+        title={"Itens acabando"}
         number={lowStockItens(items).length}
       />
     </Row>
