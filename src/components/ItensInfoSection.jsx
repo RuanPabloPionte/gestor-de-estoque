@@ -9,13 +9,14 @@ import { stockContext } from "../contexts/StockContext";
 
 const LowStockContainer = ({ items }) => {
   return (
-    <Col md={6}>
+    <Col md={6} className="">
       <Row
         style={{
           backgroundColor: "var(--bg-dark-secondary)",
           padding: "1rem 1rem",
           color: "inherit",
           borderRadius: "5px",
+          width: "100%",
         }}
         className=" d-flex justify-content-between my-2 "
       >
@@ -58,6 +59,7 @@ const RecentContainer = ({ items }) => {
           padding: "1rem 1rem",
           color: "inherit",
           borderRadius: "5px",
+          width: "100%",
         }}
         className=" d-flex justify-content-between my-2 me-2"
       >
@@ -87,7 +89,7 @@ const RecentContainer = ({ items }) => {
 export default function IntensInfoSection() {
   const { items } = useContext(stockContext);
   return (
-    <Container fluid className="gap-2">
+    <Container fluid>
       <Row>
         <RecentContainer items={items} />
         <LowStockContainer items={items} />
