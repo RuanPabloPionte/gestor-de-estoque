@@ -1,6 +1,4 @@
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/esm/Container";
+import Table from "react-bootstrap/Table";
 import LinkBtn from "../components/LinkButton";
 import { useContext } from "react";
 import { stockContext } from "../contexts/StockContext";
@@ -9,47 +7,40 @@ export default function Items() {
   const { items, removeItem } = useContext(stockContext);
 
   return (
-    <Container fluid>
-      <Row
-        className="my-3"
-        style={{
-          backgroundColor: "var(--bg-dark-secondary)",
-          padding: "1rem 1rem",
-          color: "inherit",
-          borderRadius: "5px",
-        }}
-      >
-        <Col sm={1}>Id</Col>
-        <Col sm={2}>Nome</Col>
-        <Col sm={2}>Em estoque</Col>
-        <Col sm={3}>Categorias</Col>
-        <Col md={4}>Ações</Col>
-      </Row>
-
-      {items &&
-        items.map((item) => {
-          return (
-            <Row className="my-3" key={item.id}>
-              <Col sm={1}>{item.id}</Col>
-              <Col sm={2}>{item.name}</Col>
-              <Col sm={2}>{item.quantity + " Unit"}</Col>
-              <Col sm={3}>{item.category}</Col>
-              <Col md={4}>
+    <Table striped bordered hover responsive variant="dark">
+      <thead>
+        <tr className="">
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Em Estoque</th>
+          <th>Categorias</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {items &&
+          items.map((item) => (
+            <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.name}</td>
+              <td>{item.quantity + " Unit"}</td>
+              <td>{item.category}</td>
+              <td className="d-flex flex-wrap justify-content-start aling-items-center p-2 gap-2">
                 <LinkBtn to={`/Itens/${item.id}`} text={"Ver"} className={""} />
                 <LinkBtn
                   to={`/Itens/UpdateItem/${item.id}`}
                   text={"Atualizar"}
-                  className={"btn-light mx-2"}
+                  className={"btn-light"}
                 />
                 <LinkBtn
                   onClick={() => removeItem(item.id)}
                   text={"Excluir"}
                   className={"btn-danger"}
                 />
-              </Col>
-            </Row>
-          );
-        })}
-    </Container>
+              </td>
+            </tr>
+          ))}
+      </tbody>
+    </Table>
   );
 }
