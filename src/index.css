@@ -18,7 +18,12 @@ body {
   text-decoration: none;
   color: inherit;
   margin: 0 1rem;
+  padding-bottom: 0.25rem;
+}
+.link:hover {
+  color: #2698ea;
+  border-color: #2698ea;
 }
 .active {
-  border-bottom: 1px solid var(--font-color);
+  border-bottom: 2px solid var(--font-color);
 }
