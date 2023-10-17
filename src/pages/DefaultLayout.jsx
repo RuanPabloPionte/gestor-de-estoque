@@ -1,30 +1,27 @@
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import NavLink from "../components/NavLink";
 
-const crateNavLink = (text, to) => {
-  return (
-    <Link
-      className="mx-2"
-      style={{
-        textDecoration: "none",
-        color: "inherit",
-      }}
-      to={to}
-    >
-      {text}
-    </Link>
-  );
-};
+// eslint-disable-next-line react/prop-types
 
-export default function DefaultLayot() {
+export default function DefaultLayout() {
+  const { pathname } = useLocation();
   return (
     <Container fluid>
-      <Nav className="m-2 justify-content-between">
+      <Nav className="m-2 justify-content-between ">
         <div>REACT STOCK</div>
         <div>
-          {crateNavLink("Inicio", "/")}
-          {crateNavLink("Items", "Itens")}
+          <NavLink
+            text="Inicio"
+            to="/"
+            className={`${pathname === "/" ? "active" : ""}`}
+          />
+          <NavLink
+            text="Items"
+            to="/Itens"
+            className={`${pathname === "/Itens" ? "active" : ""}`}
+          />
         </div>
       </Nav>
       <Outlet />

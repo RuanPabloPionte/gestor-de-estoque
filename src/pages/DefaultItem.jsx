@@ -1,27 +1,24 @@
 import Nav from "react-bootstrap/Nav";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Container from "react-bootstrap/Container";
+import NavLink from "../components/NavLink";
 
 export default function DefautItem() {
-  const location = useLocation();
+  const { pathname } = useLocation();
   return (
     <Container fluid>
       <h1 className="mb-3">Stock Items</h1>
       <Nav>
-        <Link
+        <NavLink
+          text={"Todos os itens"}
           to={"/Itens"}
-          className={`link ${location.pathname === "/Itens" ? "active" : ""}`}
-        >
-          Todos os itens
-        </Link>
-        <Link
+          className={`${pathname === "/Itens" ? "active" : ""}`}
+        ></NavLink>
+        <NavLink
+          text={"Novo Item"}
           to={"NewItem"}
-          className={`link ${
-            location.pathname === "/Itens/NewItem" ? "active" : ""
-          }`}
-        >
-          Novo Item
-        </Link>
+          className={`${pathname === "/Itens/NewItem" ? "active" : ""}`}
+        ></NavLink>
       </Nav>
       <hr />
       <Outlet />
